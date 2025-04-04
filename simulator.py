@@ -70,7 +70,7 @@ def simulate_portfolio(initial_value, allocations, returns, enable_withdrawls = 
     return np.array(sims) #returns np array of (# of sims, asset classes, years)
 
 
-simulations = simulate_portfolio(200000000, [.6,.3,.1], returns)
+simulations = simulate_portfolio(200000000, [.3,.6,.1], returns)
 
 #get final values
 final_values = simulations[:,:,-1]
@@ -97,7 +97,7 @@ plt.show()
 
 #get the median final value and all of its years
 median_final_value = np.median(final_portfolio_value)
-median_index = np.argmin(np.abs(final_values - median_final_value)) 
+median_index = np.argmin(np.abs(final_portfolio_value - median_final_value)) 
 median_sim = simulations[median_index]
 
 plt.stackplot(
@@ -108,9 +108,6 @@ plt.stackplot(
     labels=["Stocks", "Bonds", "Cash"]
 )
 plt.show()
-
-
-
 
     
 
