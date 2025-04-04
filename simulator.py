@@ -109,6 +109,8 @@ plt.stackplot(
 )
 plt.show()
 
+addingVar = 123
+
     
 
         
